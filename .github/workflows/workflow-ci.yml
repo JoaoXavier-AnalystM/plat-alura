@@ -9,14 +9,20 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Exec Node.js
+
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 24
-    - run: npm install
-    - run: npm test
+        node-version: 20
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: PE/allbooks-aula-01
+
+    - name: Run tests
+      run: npm test
+      working-directory: PE/allbooks-aula-01
