@@ -17,6 +17,6 @@ jobs:
     - name: Exec Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 24.13.0
+        node-version: 24
     - run: npm install
     - run: npm test
